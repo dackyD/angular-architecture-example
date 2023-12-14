@@ -8,8 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "format:test":"prettier \"projects/**/*.{ts,html,md,scss,json}\" --list-different",
-    "format:write":"prettier \"projects/**/*.{ts,html,md,scss,json}\" --write"
+    "format:test": "prettier \"projects/**/*.{ts,html,md,scss,json}\" --list-different",
+    "format:write": "prettier \"projects/**/*.{ts,html,md,scss,json}\" --write",
+    "analyze":"npm run analyze:build && npm run analyze:process && npm run analyze:serve",
+    "analyze:build":"ng build --source-map",
+    "analyze:process":"source-map-explorer dist/example-app/**/*.js --html report.html",
+    "analyze:serve":"npx http-server -o report.html"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +49,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.1.1",
+    "source-map-explorer": "^2.5.3",
     "typescript": "~5.2.2"
   }
 }
