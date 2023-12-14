@@ -10,10 +10,14 @@
     "lint": "ng lint",
     "format:test": "prettier \"projects/**/*.{ts,html,md,scss,json}\" --list-different",
     "format:write": "prettier \"projects/**/*.{ts,html,md,scss,json}\" --write",
-    "analyze":"npm run analyze:build && npm run analyze:process && npm run analyze:serve",
-    "analyze:build":"ng build --source-map",
-    "analyze:process":"source-map-explorer dist/example-app/**/*.js --html report.html",
-    "analyze:serve":"npx http-server -o report.html"
+    "analyze": "npm run analyze:build && npm run analyze:process && npm run analyze:serve",
+    "analyze:build": "ng build --source-map",
+    "analyze:process": "source-map-explorer dist/example-app/**/*.js --html dist/example-app/report.html",
+    "analyze:serve": "npx http-server -o dist/example-app/report.html",
+    "esbuild:analyze": "npm run esbuild:stats && npm run esbuild:process && npm run esbuild:serve",
+    "esbuild:stats": "ng build --stats-json",
+    "esbuild:process": "esbuild-visualizer --filename dist/example-app/stats.html --metadata dist/example-app/stats.json --template treemap",
+    "esbuild:serve": "npx http-server -o dist/example-app/stats.html"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +45,7 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "6.13.1",
     "@typescript-eslint/parser": "6.13.1",
+    "esbuild-visualizer": "^0.5.0",
     "eslint": "^8.54.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
