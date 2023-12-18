@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
     // angular modules
     RouterOutlet,
     RouterLink,
+    RouterLinkActive,
     // material modules
     MatToolbarModule,
     MatButtonModule,
