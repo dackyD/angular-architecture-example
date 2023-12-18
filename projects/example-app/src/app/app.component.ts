@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { CoreModule } from './core/core.module';
 
 @Component({
   selector: 'my-org-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CoreModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
