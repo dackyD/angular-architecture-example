@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'my-org-task',
@@ -6,8 +7,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaskComponent {
-
+  private readonly dialog = inject(MatDialog);
+  async createTagModal() {
+    const { TaskModalComponent } = await import(
+      './task-modal/task-modal.component'
+    );
+    this.dialog.open(TaskModalComponent);
+  }
 }

@@ -2,6 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
 
+## Tasks
+- ~~basic architecture for lazy loaded routes for both modules and standalone components.~~
+- ~~lazy load components used in modal dialogs~~
+- lazy load components used in ngComponentOutlet
+- lazy load components used in ngTemplateOutlet
+- lazy load multiple widgets in dashboard
+- lazy load modules with services
+- lazy load modules with services that initializes
+- lazy load just a service in a component
+- lazy load a service when it is available in the viewport
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
